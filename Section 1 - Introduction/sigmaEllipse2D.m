@@ -26,11 +26,13 @@ end
 %Your code here
 
 % linspace of theta range
-angle_samples = linspace(0.0, 2* pi, npoints);
+theta_range = linspace(0.0, 2* pi, npoints);
 
-polar_tf = [cos(angle_samples); sin(angle_samples)];
+polar_tf = [cos(theta_range) sin(theta_range)].';
 
 %using equation (2)
+
 xy = mu + level * (sqrtm(Sigma) * polar_tf);
+
 end
 
