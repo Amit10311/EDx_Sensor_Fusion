@@ -2,7 +2,9 @@ function [mu_y, Sigma_y] = affineGaussianTransform(mu_x, Sigma_x, A, b)
 
 %affineTransformGauss calculates the mean and covariance of y, the 
 %transformed variable, exactly when the function, f, is defined as 
-%y = f(x) = Ax + b, where A is a matrix, b is a vector of the same 
+
+%   y = f(x) = Ax + b, where A is a matrix, b is a vector of the same 
+
 %dimensions as y, and x is a Gaussian random variable.
 
 
