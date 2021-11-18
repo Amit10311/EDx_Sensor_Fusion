@@ -1,4 +1,4 @@
-%% %Here we give parameters for a Gaussian density. The parameter mu is the mean, and P is the covariance matrix.
+%%%Here we give parameters for a Gaussian density. The parameter mu is the mean, and P is the covariance matrix.
 
 mu = [-2; 1];
 P = [4, -2; -2 2];
@@ -20,9 +20,10 @@ title("Elongated ellipse ")
 plot(mu(1), mu(2), '*', 'color', h1.Color);
 hold off
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% %%Pretest
 
-%There should be two rows in the output (Pretest)
+%% There should be two rows in the output (Pretest) ? 
 % randomize a 2D Gaussian distribution
 
 mu = 5*randn(2,1);
@@ -32,7 +33,9 @@ xy = sigmaEllipse2D(mu, P)
 
 assert(size(xy,1) == 2, 'There should be two rows in the output');
 
- %   2. Assuming roughly equidistant points on the ellipse, is the mean of the ellipse correct? 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%   2. Assuming roughly equidistant points on the ellipse, is the mean of the ellipse correct? 
+
 % randomize a 2D Gaussian distribution
 mu = 5*randn(2,1);
 s = 2*rand(2);
@@ -44,7 +47,8 @@ xy = unique(xy', 'rows')'
 
 assert(all(abs(mean(xy, 2) - mu)./norm(mu) < 1e-1), ...
     'The mean of the ellipse points should roughly coincide with the distribution mean');
-
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %  3. Are the generated points on an ellipse of the right shape 
 
 % randomize a 2D Gaussian distribution
@@ -80,6 +84,8 @@ plot(mu(1), mu(2), '*', 'color', h1.Color);
 
 hold off
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %% % 4.  Check that the level option is used to control the size of the ellipse.
 
 % randomize a 2D Gaussian distribution
@@ -114,6 +120,7 @@ plot(mu(1), mu(2), '*', 'color', h1.Color);
 hold off
 
 %% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 function [ xy ] = sigmaEllipse2D( mu, Sigma, level, npoints )
 %SIGMAELLIPSE2D generates x,y-points which lie on the ellipse describing
