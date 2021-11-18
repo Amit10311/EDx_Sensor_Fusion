@@ -19,7 +19,7 @@ title("Elongated ellipse ")
 %Also plot a star where the mean is, and make it have the same color as the ellipse.
 plot(mu(1), mu(2), '*', 'color', h1.Color);
 hold off
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%----------------------%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% %%Pretest
 
 %There should be two rows in the output (Pretest)
