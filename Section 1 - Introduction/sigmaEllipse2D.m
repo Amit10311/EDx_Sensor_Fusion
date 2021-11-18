@@ -28,7 +28,7 @@ end
 % linspace of theta range
 theta_range = linspace(0.0, 2* pi, npoints);
 
-polar_tf = [cos(theta_range) sin(theta_range)].';
+polar_tf = [cos(theta_range); sin(theta_range)];
 
 %using equation (2)
 
